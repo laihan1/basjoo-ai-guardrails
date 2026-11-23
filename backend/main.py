@@ -11,6 +11,7 @@ from database import init_db
 from api.endpoints import auth
 from api.v1 import analytics_endpoints as v1_analytics_endpoints
 from api.v1 import attachments_endpoints as v1_attachments_endpoints
+from api.v1 import approvals as v1_approvals
 from api.v1 import endpoints as v1_endpoints
 from api.v1 import kb_endpoints as v1_kb_endpoints
 from api.v1 import leads_endpoints as v1_leads_endpoints
@@ -231,6 +232,7 @@ app.include_router(v1_analytics_endpoints.router, tags=["analytics"])
 # attachment handlers and the macro CRUD into these two modules.
 app.include_router(v1_attachments_endpoints.router, tags=["attachments"])
 app.include_router(v1_macros_endpoints.router, tags=["macros"])
+app.include_router(v1_approvals.router, prefix="/api/v1", tags=["approvals"])
 
 
 # SDK.js 路由 - 用于嵌入 widget

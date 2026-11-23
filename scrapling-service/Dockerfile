@@ -19,6 +19,7 @@ RUN sed -i "s|http://deb.debian.org|${DEBIAN_MIRROR}|g" /etc/apt/sources.list.d/
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
+
 # crawl4ai drives Playwright's Chromium; --with-deps installs its shared libs.
 RUN playwright install --with-deps chromium
 

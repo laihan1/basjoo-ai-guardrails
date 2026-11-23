@@ -185,3 +185,17 @@ node_modules
 
 # Playwright HTML report is a per-run artifact
 tests/playwright-report/
+
+# --- Custom Guardrails & Approvals ---
+.env
+.env.*
+!.env.example
+*.db
+*.sqlite
+*.sqlite3
+data/
+llmverify-service/node_modules/
+__pycache__/
+*.pyc
+
+!test_guardrails.py

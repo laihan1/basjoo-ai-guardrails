@@ -137,6 +137,15 @@ services:
   # ============================================
   # 生产环境服务
   # ============================================
+  llmverify:
+    build:
+      context: ./llmverify-service
+    container_name: basjoo-llmverify
+    restart: unless-stopped
+    profiles: ["prod", "dev"]
+    networks:
+      - basjoo-network
+
   backend-prod:
     build:
       context: ./backend
